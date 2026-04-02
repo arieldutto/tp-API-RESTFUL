@@ -1,7 +1,15 @@
+/**
+ * Controladores de los libros
+ */
 import { Request, Response } from "express";
 import Book from "../models/Book";
 
-// 1. Crear un libro 
+// 1. Crear un libro
+/**
+ * Crea un nuevo libro   
+ * @param req 
+ * @param res 
+ */
 export const createBook = async (req: Request, res: Response) => {
     try {
         const bookData = req.body;
@@ -14,6 +22,11 @@ export const createBook = async (req: Request, res: Response) => {
 };
 
 // 2. Obtener todos los libros
+/**
+ * Obtiene todos los libros 
+ * @param req 
+ * @param res 
+ */
 export const getAllBooks = async (req: Request, res: Response) => {
     try {
         const books = await Book.find();
@@ -24,6 +37,12 @@ export const getAllBooks = async (req: Request, res: Response) => {
 };
 
 // 3. Obtener un libro por ID
+/**
+ * Obtiene un libro por ID 
+ * @param req 
+ * @param res 
+ * @returns 
+ */
 export const getBookById = async (req: Request, res: Response) => {
     try {
         const book = await Book.findById(req.params.id);
@@ -37,6 +56,11 @@ export const getBookById = async (req: Request, res: Response) => {
 };
 
 // 4. Actualizar un libro
+/**
+ * Actualiza un libro por ID 
+ * @param req 
+ * @param res 
+ */
 export const updateBook = async (req: Request, res: Response) => {
     try {
         const book = await Book.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -50,6 +74,12 @@ export const updateBook = async (req: Request, res: Response) => {
 };
 
 // 5. Eliminar un libro
+/**
+ * Elimina un libro por ID 
+ * @param req 
+ * @param res 
+ * @returns 
+ */
 export const deleteBook = async (req: Request, res: Response) => {
     try {
         const book = await Book.findByIdAndDelete(req.params.id);

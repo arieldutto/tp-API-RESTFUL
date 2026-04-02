@@ -1,14 +1,8 @@
-import mongoose, { Schema, Document } from "mongoose";
-
-// Definimos la interfaz que representa un documento de MongoDB
-interface IBook extends Document {
-    title: string;
-    author: string;
-    publishedYear?: number;
-    genre?: string;
-    available: boolean;
-}
-// Definimos el esquema de Mongoose
+import mongoose, { Schema } from "mongoose";
+import { IBook } from "../interfaces/book.interfaces";
+/**
+ * Modelo de libro  
+ */
 const BookSchema: Schema = new Schema({
     title: {
         type: String,
@@ -31,7 +25,9 @@ const BookSchema: Schema = new Schema({
         default: true
     },
 }, { timestamps: true });
-// Exportamos el modelo
+/**
+ * Exportamos el modelo
+ */
 const Book = mongoose.model<IBook>("Book", BookSchema);
 export default Book;
 
