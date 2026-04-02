@@ -4,8 +4,8 @@ import mongoose, { Schema, Document } from "mongoose";
 interface IBook extends Document {
     title: string;
     author: string;
-    publishedYear: number;
-    genre: string;
+    publishedYear?: number;
+    genre?: string;
     available: boolean;
 }
 // Definimos el esquema de Mongoose
@@ -19,14 +19,15 @@ const BookSchema: Schema = new Schema({
         type: String,
         required: true
     },
-    publishedYear?: {
+    publishedYear: {
         type: Number
     },
-    genre?: {
+    genre: {
         type: String
     },
     available: {
         type: Boolean,
+        required: true,
         default: true
     },
 }, { timestamps: true });

@@ -3,6 +3,7 @@ import express, { Request, Response } from 'express';
 // 1. Cargar las variables de entorno
 process.loadEnvFile();
 import connectDB from './config/database';
+import bookRoutes from './routes/book.routes';
 
 const app = express();
 // Obtener el puerto desde process.env (y dar un valor por defecto por si acaso)
@@ -17,7 +18,10 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 connectDB();
-// 4. Iniciar el servidor
+// 4. Rutas de la API
+app.use('/api/books', bookRoutes);
+
+// 5. Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
