@@ -7,6 +7,8 @@ Breve descripción: Esta es una API RESTful construida con Node.js, Express, Typ
 - Express
 - TypeScript
 - MongoDB (Mongoose)
+- TSDoc (Documentación de código)
+- Swagger (Interfaz interactiva de la API)
 
 ## ⚙️ Instalación y Configuración
 
