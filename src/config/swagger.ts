@@ -1,4 +1,7 @@
 import swaggerJsdoc from "swagger-jsdoc";
+/**
+ * Configuración de Swagger
+ */
 
 const options: swaggerJsdoc.Options = {
     definition: {
