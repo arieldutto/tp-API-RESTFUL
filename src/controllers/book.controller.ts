@@ -17,6 +17,8 @@ export const createBook = async (req: Request, res: Response) => {
         await newBook.save();
         res.status(201).json({ success: true, data: newBook });
     } catch (error) {
+        console.log("EL ERROR ES:", error);
+
         res.status(500).json({ success: false, message: "Error al crear el libro" });
     }
 };

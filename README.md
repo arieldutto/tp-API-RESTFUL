@@ -12,7 +12,7 @@ Breve descripción: Esta es una API RESTful construida con Node.js, Express, Typ
 
 1. Clonar el repositorio:
    \`\`\`bash
-   git clone <URL_D_TU_REPOSITORIO>
+   git clone https://github.com/arieldutto/tp-API-RESTFUL.git
    \`\`\`
 
 2. Instalar las dependencias:
@@ -42,3 +42,9 @@ Breve descripción: Esta es una API RESTful construida con Node.js, Express, Typ
 | \`PATCH\`| \`/api/books/:id\` | Actualizar un libro existente |
 | \`DELETE\`| \`/api/books/:id\` | Eliminar un libro |
 
+## 📖 Documentación de la API (Swagger)
+
+Esta API incluye documentación interactiva generada con **Swagger**. 
+Para probar los endpoints directo desde el navegador, asegúrate de tener el servidor corriendo y visita:
+
+👉 **[http://localhost:3000/api-docs](http://localhost:3000/api-docs)**
